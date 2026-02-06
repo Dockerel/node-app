@@ -34,8 +34,8 @@ jobs:
         uses: aws-actions/amazon-ecr-login@v2
 
       # 버전 자동 생성
-    - name: Set image version tag
-      run: echo "IMAGE_TAG=v${{ github.run_number }}" >> $GITHUB_ENV
+      - name: Set image version tag
+        run: echo "IMAGE_TAG=v${{ github.run_number }}" >> $GITHUB_ENV
 
       # Docker 이미지 빌드 및 푸시
       - name: Build, Tag, and Push image to ECR
